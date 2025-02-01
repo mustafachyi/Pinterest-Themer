@@ -2068,6 +2068,81 @@
         [data-test-id="comment-reaction-container-entry-point"] svg {
             fill: var(--theme-muted) !important;
         }
+
+        /* After the existing button styles, add these styles */
+
+        /* Maybe Clickthrough Link Text Color */
+        [data-test-id="maybe-clickthrough-link"],
+        [data-test-id="maybe-clickthrough-link"] * {
+            color: var(--theme-text) !important;
+            -webkit-text-fill-color: var(--theme-text) !important;
+            transition: opacity 0.2s ease !important;
+        }
+
+        [data-test-id="maybe-clickthrough-link"]:hover,
+        [data-test-id="maybe-clickthrough-link"]:hover * {
+            opacity: 0.9 !important;
+        }
+
+        [data-test-id="maybe-clickthrough-link"]:active,
+        [data-test-id="maybe-clickthrough-link"]:active * {
+            opacity: 0.8 !important;
+        }
+
+        /* Description Container Background Fix */
+        [data-test-id="less-description-container"] {
+            background: none !important;
+        }
+
+        [data-test-id="more-description-container"] {
+            background-color: var(--theme-obsidian) !important;
+        }
+
+        [data-test-id="less-description-container"] [style*="background"] {
+            background: none !important;
+        }
+
+        [data-test-id="more-description-container"] [style*="background"] {
+            background-color: var(--theme-obsidian) !important;
+        }
+
+        /* Description Text States */
+        [data-test-id="less-description-container"],
+        [data-test-id="more-description-container"] {
+            transition: box-shadow 0.2s ease !important;
+        }
+
+        [data-test-id="less-description-container"] span,
+        [data-test-id="more-description-container"] span,
+        [data-test-id="less-description-container"] div,
+        [data-test-id="more-description-container"] div {
+            color: var(--theme-text) !important;
+            -webkit-text-fill-color: var(--theme-text) !important;
+            transition: opacity 0.2s ease !important;
+        }
+
+        /* Interactive Text States */
+        [data-test-id="less-description-container"]:hover span,
+        [data-test-id="more-description-container"]:hover span,
+        [data-test-id="less-description-container"]:hover div,
+        [data-test-id="more-description-container"]:hover div {
+            opacity: 0.9 !important;
+        }
+
+        [data-test-id="less-description-container"]:active span,
+        [data-test-id="more-description-container"]:active span,
+        [data-test-id="less-description-container"]:active div,
+        [data-test-id="more-description-container"]:active div {
+            opacity: 0.8 !important;
+        }
+
+        /* Focus State */
+        [data-test-id="less-description-container"]:focus-visible,
+        [data-test-id="more-description-container"]:focus-visible {
+            outline: none !important;
+            box-shadow: 0 0 0 2px var(--theme-border) !important;
+            border-radius: 4px !important;
+        }
     `;
 
     // ====================================
@@ -2124,7 +2199,7 @@
             const githubButton = document.createElement("div");
             githubButton.className = "github-profile-button";
             githubButton.innerHTML = `
-                <a href="https://github.com/mustafachyi" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/mustafachyi/Pinterest-Themer" target="_blank" rel="noopener noreferrer">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
                     </svg>
