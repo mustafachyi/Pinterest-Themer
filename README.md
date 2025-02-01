@@ -17,7 +17,7 @@ Pinterest Themer is a work-in-progress userscript that transforms Pinterest's in
 
 ## Installation
 
-1. Install a userscript manager like Tampermonkey or Greasemonkey in your browser
+1. Install Tampermonkey in Firefox (currently only tested with this combination)
 2. Navigate to the `dist` folder in this repository
 3. Install the latest version of `bundle.user.js` - this is the production-ready version that gets updated with each optimized build
 4. Visit Pinterest and the theme will automatically apply
@@ -44,7 +44,11 @@ The development build will watch for changes and automatically rebuild. The comp
 
 ## Compatibility 
 
-Works with all major browsers and Pinterest domains including:
+Currently tested and confirmed working with:
+- Browser: Firefox
+- Userscript Manager: Tampermonkey
+
+While the script may work with other browsers and userscript managers, it has not been extensively tested with them yet. The theme works across all Pinterest domains including:
 - pinterest.com
 - pinterest.ca
 - pinterest.co.uk
