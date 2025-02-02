@@ -2367,87 +2367,354 @@
             fill: var(--theme-navIconHover) !important;
         }
 
-        /* Compose New Message Button */
+        /* Compose New Message Button - Using invite-friends-cta pattern */
+        [data-test-id="compose-new-message-button"] {
+            margin: 8px !important;
+            background-color: var(--theme-secondary) !important;
+            border: var(--theme-borderWidth) solid transparent !important;
+            border-radius: 8px !important;
+            transition: all 0.2s ease !important;
+            padding: 12px 16px !important; /* Added padding to match invite-friends-cta */
+        }
+
+        /* Reset Pinterest's original classes */
+        [data-test-id="compose-new-message-button"] .H-G.Jea.KS5.Yo2._co.i1W.s2n.u8x.zI7.iyn.Hsu,
+        [data-test-id="compose-new-message-button"] .H-G.Jea.KS5.Yo2._co.haa.i1W.s2n.u8x.zI7.iyn.Hsu,
         [data-test-id="compose-new-message-button"] .S9z.eEj.CCY.Tbt.L4E.e8F.BG7 {
-            background-color: var(--theme-secondary) !important;
-            border: var(--theme-borderWidth) solid transparent !important;
-            border-radius: 8px !important;
-            transition: all 0.2s ease !important;
-            margin: 8px !important;
+            all: initial !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 16px !important; /* Increased gap between icon and text */
+            width: 100% !important;
         }
 
-        [data-test-id="compose-new-message-button"] .H-G.INd.Jea.KS5.mQ8.yBD svg {
-            fill: var(--theme-navIconFill) !important;
-            transition: fill 0.2s ease !important;
-        }
-
-        [data-test-id="compose-new-message-button"] .X8m.zDA.IZT.CKL.tBJ.dyH.iFc.sAJ.H2s {
-            color: var(--theme-text) !important;
-        }
-
-        [data-test-id="compose-new-message-button"] .S9z.eEj.CCY.Tbt.L4E.e8F.BG7:hover {
-            background-color: var(--theme-hover) !important;
-            border-color: var(--theme-border) !important;
-            transform: translateY(-1px) !important;
-        }
-
-        [data-test-id="compose-new-message-button"] .S9z.eEj.CCY.Tbt.L4E.e8F.BG7:hover svg {
-            fill: var(--theme-navIconHover) !important;
-        }
-
-        /* Invite Friends Section */
-        [data-test-id="invite-friends-cta"] {
-            background-color: var(--theme-secondary) !important;
-            border: var(--theme-borderWidth) solid transparent !important;
-            border-radius: 8px !important;
-            margin: 8px !important;
-            transition: all 0.2s ease !important;
-        }
-
-        [data-test-id="invite-friends-cta"] .H-G.INd.Jea.KS5.Yo2.haa.mQ8 {
+        /* Apply invite-friends-cta icon container style */
+        [data-test-id="compose-new-message-button"] .H-G.INd.Jea.KS5.mQ8.yBD.zI7.iyn.Hsu {
+            composes: H-G INd Jea KS5 Yo2 haa mQ8 !important;
             background-color: var(--theme-focus) !important;
             border-radius: 12px !important;
+            height: 48px !important; /* Increased to match invite-friends-cta */
+            width: 48px !important; /* Increased to match invite-friends-cta */
+            min-height: 48px !important;
+            min-width: 48px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
             transition: all 0.2s ease !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            flex-shrink: 0 !important; /* Prevent icon from shrinking */
         }
 
-        [data-test-id="invite-friends-cta"] svg {
+        /* Text styling using invite-friends-cta pattern */
+        [data-test-id="compose-new-message-button"] .X8m.zDA.IZT.CKL.tBJ.dyH.iFc.sAJ.H2s {
+            composes: X8m zDA IZT !important;
+            color: var(--theme-text) !important;
+            font-size: 16px !important; /* Increased to match invite-friends-cta */
+            font-weight: 500 !important; /* Adjusted to match invite-friends-cta */
+            line-height: 1.5 !important; /* Adjusted line height */
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        /* SVG icon */
+        [data-test-id="compose-new-message-button"] svg {
+            width: 24px !important; /* Increased to match invite-friends-cta */
+            height: 24px !important; /* Increased to match invite-friends-cta */
             fill: var(--theme-navIconFill) !important;
             transition: fill 0.2s ease !important;
         }
 
-        [data-test-id="invite-friends-cta"] .X8m.zDA.IZT,
-        [data-test-id="invite-friends-cta"] .JlN.zDA.IZT {
-            color: var(--theme-text) !important;
-        }
-
-        [data-test-id="invite-friends-cta"]:hover {
+        /* Hover states - matching invite-friends-cta */
+        [data-test-id="compose-new-message-button"]:hover {
             background-color: var(--theme-hover) !important;
             border-color: var(--theme-border) !important;
             transform: translateY(-1px) !important;
         }
 
-        [data-test-id="invite-friends-cta"]:hover .H-G.INd.Jea.KS5.Yo2.haa.mQ8 {
+        [data-test-id="compose-new-message-button"]:hover .H-G.INd.Jea.KS5.mQ8.yBD.zI7.iyn.Hsu {
             background-color: var(--theme-hover) !important;
         }
 
-        [data-test-id="invite-friends-cta"]:hover svg {
+        [data-test-id="compose-new-message-button"]:hover svg {
             fill: var(--theme-navIconHover) !important;
         }
 
-        /* Focus States */
-        [data-test-id="chat-window-container"] button:focus-visible,
-        [data-test-id="compose-new-message-button"] .S9z.eEj.CCY.Tbt.L4E.e8F.BG7:focus-visible,
-        [data-test-id="invite-friends-cta"]:focus-visible {
+        /* Active states */
+        [data-test-id="compose-new-message-button"]:active {
+            transform: translateY(0) !important;
+            background-color: var(--theme-focus) !important;
+        }
+
+        [data-test-id="compose-new-message-button"]:active .H-G.INd.Jea.KS5.mQ8.yBD.zI7.iyn.Hsu {
+            background-color: var(--theme-focus) !important;
+        }
+
+        /* Focus states */
+        [data-test-id="compose-new-message-button"]:focus-visible {
             outline: none !important;
             box-shadow: 0 0 0 2px var(--theme-border) !important;
         }
 
-        /* Active States */
-        [data-test-id="chat-window-container"] button:active .SPw._O1.KS5.mQ8.K1k.uPZ,
-        [data-test-id="compose-new-message-button"] .S9z.eEj.CCY.Tbt.L4E.e8F.BG7:active,
-        [data-test-id="invite-friends-cta"]:active {
-            transform: scale(0.98) !important;
+        /* Force override any remaining Pinterest inline styles */
+        [data-test-id="compose-new-message-button"] *[style*="height"],
+        [data-test-id="compose-new-message-button"] *[style*="width"],
+        [data-test-id="compose-new-message-button"] *[style*="background"],
+        [data-test-id="compose-new-message-button"] *[style*="margin"],
+        [data-test-id="compose-new-message-button"] *[style*="padding"] {
+            height: auto !important;
+            width: auto !important;
+            background: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        /* Profile Name and Following Count Text Color */
+        [data-test-id="profile-name"],
+        [data-test-id="profile-following-count"] {
+            color: var(--theme-text) !important;
+        }
+
+        /* Ensure any child elements also use the correct color */
+        [data-test-id="profile-name"] *,
+        [data-test-id="profile-following-count"] * {
+            color: var(--theme-text) !important;
+        }
+
+        /* Force override any Pinterest inline styles */
+        [data-test-id="profile-name"][style*="color"],
+        [data-test-id="profile-following-count"][style*="color"],
+        [data-test-id="profile-name"] [style*="color"],
+        [data-test-id="profile-following-count"] [style*="color"] {
+            color: var(--theme-text) !important;
+        }
+
+        /* Dimmed text and icon styling */
+        .qGb.zI7.iyn.Hsu {
+            color: var(--theme-muted) !important;
+        }
+
+        .qGb.zI7.iyn.Hsu svg {
+            fill: var(--theme-muted) !important;
+        }
+
+        /* Force override any Pinterest inline styles */
+        .qGb.zI7.iyn.Hsu[style*="color"],
+        .qGb.zI7.iyn.Hsu *[style*="color"] {
+            color: var(--theme-muted) !important;
+        }
+
+        /* Dimmed text and icon styling */
+        .qGb.zI7.iyn.Hsu svg {
+            fill: var(--theme-muted) !important;
+        }
+
+        .JlN.zDA.IZT.tBJ.dyH.iFc.j1A.swG {
+            color: var(--theme-muted) !important;
+        }
+
+        /* Force override any Pinterest inline styles */
+        .JlN.zDA.IZT.tBJ.dyH.iFc.j1A.swG[style*="color"] {
+            color: var(--theme-muted) !important;
+        }
+
+        /* Link container styling */
+        .qGb.zI7.iyn.Hsu {
+            color: var(--theme-text) !important;
+        }
+
+        .qGb.zI7.iyn.Hsu a {
+            color: var(--theme-text) !important;
+            transition: opacity 0.2s ease !important;
+        }
+
+        .qGb.zI7.iyn.Hsu a:hover {
+            opacity: 0.9 !important;
+        }
+
+        /* Force override any Pinterest inline styles */
+        .qGb.zI7.iyn.Hsu[style*="color"],
+        .qGb.zI7.iyn.Hsu a[style*="color"] {
+            color: var(--theme-text) !important;
+        }
+
+        /* Keep existing SVG styling */
+        .qGb.zI7.iyn.Hsu svg {
+            fill: var(--theme-muted) !important;
+        }
+
+        /* Remove background from specific container */
+        .i1W.imm.zI7.iyn.Hsu {
+            background-color: transparent !important;
+        }
+
+        /* Force override any Pinterest inline styles */
+        .i1W.imm.zI7.iyn.Hsu[style*="background"] {
+            background-color: transparent !important;
+        }
+
+        /* Profile Organize Button Styling */
+        [data-test-id="profile-organize-button"] button {
+            background: none !important;
+            border: none !important;
+            padding: 0 !important;
+            cursor: pointer !important;
+            position: relative !important;
+        }
+
+        [data-test-id="profile-organize-button"] .SPw._O1.KS5.mQ8.K1k.uPZ {
+            background-color: var(--theme-secondary) !important;
+            border: var(--theme-borderWidth) solid transparent !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transition: all 0.2s ease !important;
+            transform: translateZ(0) !important;
+            will-change: transform !important;
+        }
+
+        [data-test-id="profile-organize-button"] svg {
+            fill: var(--theme-navIconFill) !important;
+            transition: fill 0.2s ease !important;
+        }
+
+        /* Hover state */
+        [data-test-id="profile-organize-button"] .SPw._O1.KS5.mQ8.K1k.uPZ:hover {
+            background-color: var(--theme-hover) !important;
+            border-color: var(--theme-border) !important;
+            transform: scale(1.05) translateZ(0) !important;
+        }
+
+        [data-test-id="profile-organize-button"] .SPw._O1.KS5.mQ8.K1k.uPZ:hover svg {
+            fill: var(--theme-navIconHover) !important;
+        }
+
+        /* Focus state */
+        [data-test-id="profile-organize-button"] button:focus-visible {
+            outline: none !important;
+        }
+
+        [data-test-id="profile-organize-button"] button:focus-visible .SPw._O1.KS5.mQ8.K1k.uPZ {
             background-color: var(--theme-focus) !important;
+            border-color: var(--theme-border) !important;
+            box-shadow: 0 0 0 2px var(--theme-border) !important;
+        }
+
+        /* Active state */
+        [data-test-id="profile-organize-button"] .SPw._O1.KS5.mQ8.K1k.uPZ:active {
+            transform: scale(0.95) translateZ(0) !important;
+            background-color: var(--theme-focus) !important;
+        }
+
+        /* Board Actions Button Styling */
+        [data-test-id="boardActionsButton"] button {
+            background: none !important;
+            border: none !important;
+            padding: 0 !important;
+            cursor: pointer !important;
+            position: relative !important;
+        }
+
+        [data-test-id="boardActionsButton"] .SPw._O1.KS5.mQ8.K1k.uPZ {
+            background-color: var(--theme-secondary) !important;
+            border: var(--theme-borderWidth) solid transparent !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            transition: all 0.2s ease !important;
+            transform: translateZ(0) !important;
+            will-change: transform !important;
+        }
+
+        [data-test-id="boardActionsButton"] svg {
+            fill: var(--theme-navIconFill) !important;
+            transition: fill 0.2s ease !important;
+        }
+
+        /* Hover state */
+        [data-test-id="boardActionsButton"] .SPw._O1.KS5.mQ8.K1k.uPZ:hover {
+            background-color: var(--theme-hover) !important;
+            border-color: var(--theme-border) !important;
+            transform: scale(1.05) translateZ(0) !important;
+        }
+
+        [data-test-id="boardActionsButton"] .SPw._O1.KS5.mQ8.K1k.uPZ:hover svg {
+            fill: var(--theme-navIconHover) !important;
+        }
+
+        /* Focus state */
+        [data-test-id="boardActionsButton"] button:focus-visible {
+            outline: none !important;
+        }
+
+        [data-test-id="boardActionsButton"] button:focus-visible .SPw._O1.KS5.mQ8.K1k.uPZ {
+            background-color: var(--theme-focus) !important;
+            border-color: var(--theme-border) !important;
+            box-shadow: 0 0 0 2px var(--theme-border) !important;
+        }
+
+        /* Active state */
+        [data-test-id="boardActionsButton"] .SPw._O1.KS5.mQ8.K1k.uPZ:active {
+            transform: scale(0.95) translateZ(0) !important;
+            background-color: var(--theme-focus) !important;
+        }
+
+        /* Theme-consistent divider styling */
+        [data-gestalt-valid-html="Divider"] {
+            height: 1px !important;
+            background-color: var(--theme-border) !important;
+            border: none !important;
+            margin: 8px 0 !important;
+            opacity: 0.5 !important;
+        }
+
+        /* Force override any Pinterest inline styles */
+        [data-gestalt-valid-html="Divider"][style*="background"],
+        [data-gestalt-valid-html="Divider"][style*="border"],
+        [data-gestalt-valid-html="Divider"][style*="height"],
+        [data-gestalt-valid-html="Divider"][style*="margin"] {
+            background-color: var(--theme-border) !important;
+            border: none !important;
+            height: 1px !important;
+            margin: 8px 0 !important;
+        }
+
+        /* Target and simplify the specific div */
+        .Eqh.Jea.KS5.XiG.Yo2.s2n.zI7.iyn.Hsu {
+            height: 48px !important;
+            /* Remove all other styles that might be applied by these classes */
+            all: unset !important;
+            height: 48px !important; /* Reapply height after unset */
+        }
+
+        /* Search filter styling */
+        [data-test-id="search-filter"] {
+            color: var(--theme-text) !important;
+            transition: opacity 0.2s ease !important;
+        }
+
+        [data-test-id="search-filter"] svg {
+            fill: var(--theme-navIconFill) !important;
+            transition: fill 0.2s ease !important;
+        }
+
+        [data-test-id="search-filter"]:hover {
+            opacity: 0.8 !important;
+        }
+
+        [data-test-id="search-filter"]:hover svg {
+            fill: var(--theme-navIconHover) !important;
+        }
+
+        [data-test-id="search-filter"] .X8m.zDA.IZT.tBJ.dyH.iFc.j1A.H2s {
+            color: var(--theme-text) !important;
+            transition: opacity 0.2s ease !important;
+        }
+
+        [data-test-id="search-filter"]:hover .X8m.zDA.IZT.tBJ.dyH.iFc.j1A.H2s {
+            opacity: 0.8 !important;
         }
     `;
 
