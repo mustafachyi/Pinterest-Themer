@@ -137,7 +137,7 @@ module.exports = (env, argv) => {
     performance: {
       hints: false
     },
-    devtool: isDevelopment ? 'cheap-module-source-map' : false,
+    devtool: false,
     mode: isDevelopment ? 'development' : 'production'
   };
 }; 
