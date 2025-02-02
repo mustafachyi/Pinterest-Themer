@@ -2716,6 +2716,71 @@
         [data-test-id="search-filter"]:hover .X8m.zDA.IZT.tBJ.dyH.iFc.j1A.H2s {
             opacity: 0.8 !important;
         }
+
+        /* Position adjustment for MIw class */
+        .MIw.zI7.iyn.Hsu {
+            bottom: -7px !important;
+        }
+
+        /* Background color for uom class */
+        .uom.zI7.iyn.Hsu {
+            background-color: var(--theme-navIconFill) !important;
+        }
+
+        /* Saved Profile Tab Styling - Normal state only */
+        #_saved-profile-tab .DUt.XiG._co._wN.hjq.zI7.iyn.Hsu {
+            background-color: var(--theme-secondary) !important;
+        }
+
+        #_saved-profile-tab .X8m.zDA.UK7.tBJ.dyH.iFc.H2s.sAJ {
+            color: var(--theme-text) !important;
+        }
+
+        /* Active/Selected state */
+        #_saved-profile-tab [aria-current="page"] .DUt.XiG._co._wN.hjq.zI7.iyn.Hsu {
+            background-color: var(--theme-focus) !important;
+        }
+
+        /* After the existing chat window container styles, add this specific override */
+
+        /* Chat Window Options Button Position Fix */
+        [data-test-id="chat-window-container"] .Jea.MIw.MtH.p6V.zI7.iyn.Hsu {
+            position: static !important;
+            margin-left: auto !important;
+            display: flex !important;
+            align-items: center !important;
+        }
+
+        /* Adjust button sizing */
+        [data-test-id="chat-window-container"] button[aria-label="inbox options overflow button"] .SPw._O1.KS5.mQ8.K1k.uPZ {
+            height: 32px !important;
+            width: 32px !important;
+            min-height: 32px !important;
+            min-width: 32px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+
+        /* Adjust SVG icon size */
+        [data-test-id="chat-window-container"] button[aria-label="inbox options overflow button"] svg {
+            width: 16px !important;
+            height: 16px !important;
+        }
+
+        /* Header container adjustments */
+        [data-test-id="chat-window-container"] .Jea.KS5._co.hjq {
+            height: 64px !important;
+            padding: 8px !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+        }
+
+        /* Title spacing */
+        [data-test-id="chat-window-container"] .X8m.zDA.IZT.tBJ.dyH.iFc.bwj.H2s {
+            margin-left: 8px !important;
+        }
     `;
 
     // ====================================
