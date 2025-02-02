@@ -1842,7 +1842,6 @@
             background-color: var(--theme-focus) !important;
         }
 
-        /* After the existing button styles, add these styles */
 
         /* Quick Save Button */
         [data-test-id="quick-save-button"] button {
@@ -2069,7 +2068,6 @@
             fill: var(--theme-muted) !important;
         }
 
-        /* After the existing button styles, add these styles */
 
         /* Maybe Clickthrough Link Text Color */
         [data-test-id="maybe-clickthrough-link"],
@@ -2142,6 +2140,314 @@
             outline: none !important;
             box-shadow: 0 0 0 2px var(--theme-border) !important;
             border-radius: 4px !important;
+        }
+
+
+        /* Pin Type Identifier Styling */
+        [data-test-id="PinTypeIdentifier"] {
+            background-color: var(--theme-secondary) !important;
+            color: var(--theme-text) !important;
+        }
+
+        [data-test-id="PinTypeIdentifier"].FNs.zI7.iyn.Hsu {
+            background-color: var(--theme-secondary) !important;
+            color: var(--theme-text) !important;
+        }
+
+        /* Override any inline styles */
+        [data-test-id="PinTypeIdentifier"][style*="background-color"],
+        [data-test-id="PinTypeIdentifier"][style*="color"] {
+            background-color: var(--theme-secondary) !important;
+            color: var(--theme-text) !important;
+        }
+
+
+        /* Text Color Overrides */
+        .C00._co.zI7.iyn.Hsu,
+        .C00._co.zI7.iyn.Hsu *,
+        .lH1.dyH.iFc.H2s.sAJ.X8m.tg7.IZT {
+            color: var(--theme-text) !important;
+            transition: opacity 0.2s ease !important;
+        }
+
+        .C00._co.zI7.iyn.Hsu:hover,
+        .C00._co.zI7.iyn.Hsu:hover * {
+            opacity: 0.9 !important;
+        }
+
+        .C00._co.zI7.iyn.Hsu:active,
+        .C00._co.zI7.iyn.Hsu:active * {
+            opacity: 0.8 !important;
+        }
+
+        /* Override any inline styles */
+        .C00._co.zI7.iyn.Hsu[style*="color"],
+        .C00._co.zI7.iyn.Hsu *[style*="color"],
+        .lH1.dyH.iFc.H2s.sAJ.X8m.tg7.IZT[style*="color"] {
+            color: var(--theme-text) !important;
+        }
+
+        /* Invite Friends CTA Styling */
+        [data-test-id="invite-friends-cta"] {
+            background-color: var(--theme-secondary) !important;
+            transition: background-color 0.2s ease !important;
+        }
+
+        /* Text styling for all inner text elements */
+        [data-test-id="invite-friends-cta"] .X8m.zDA.IZT,
+        [data-test-id="invite-friends-cta"] .JlN.zDA.IZT {
+            color: var(--theme-text) !important;
+            transition: opacity 0.2s ease !important;
+        }
+
+        /* Icon container styling */
+        [data-test-id="invite-friends-cta"] .H-G.INd.Jea.KS5.Yo2.haa.mQ8.zI7.iyn.Hsu {
+            background-color: var(--theme-focus) !important;
+            border-radius: 12px !important;
+            transition: all 0.2s ease !important;
+            transform: translateZ(0) !important;
+            will-change: transform !important;
+        }
+
+        /* Hover states */
+        [data-test-id="invite-friends-cta"]:hover .H-G.INd.Jea.KS5.Yo2.haa.mQ8.zI7.iyn.Hsu {
+            background-color: var(--theme-hover) !important;
+            transform: scale(1.05) translateZ(0) !important;
+        }
+
+        /* Active states */
+        [data-test-id="invite-friends-cta"]:active .H-G.INd.Jea.KS5.Yo2.haa.mQ8.zI7.iyn.Hsu {
+            background-color: var(--theme-focus) !important;
+            transform: scale(0.95) translateZ(0) !important;
+        }
+
+        /* Icon styling */
+        [data-test-id="invite-friends-cta"] svg {
+            fill: var(--theme-navIconFill) !important;
+            transition: fill 0.2s ease !important;
+        }
+
+        /* Hover states */
+        [data-test-id="invite-friends-cta"]:hover {
+            background-color: var(--theme-hover) !important;
+        }
+
+        [data-test-id="invite-friends-cta"]:hover .H-G.INd.Jea.KS5.Yo2.haa.mQ8.zI7.iyn.Hsu {
+            background-color: var(--theme-hover) !important;
+        }
+
+        [data-test-id="invite-friends-cta"]:hover .X8m.zDA.IZT,
+        [data-test-id="invite-friends-cta"]:hover .JlN.zDA.IZT {
+            opacity: 0.9 !important;
+        }
+
+        [data-test-id="invite-friends-cta"]:hover svg {
+            fill: var(--theme-navIconHover) !important;
+        }
+
+        /* Active states */
+        [data-test-id="invite-friends-cta"]:active {
+            background-color: var(--theme-focus) !important;
+        }
+
+        [data-test-id="invite-friends-cta"]:active .H-G.INd.Jea.KS5.Yo2.haa.mQ8.zI7.iyn.Hsu {
+            background-color: var(--theme-focus) !important;
+        }
+
+        [data-test-id="invite-friends-cta"]:active .X8m.zDA.IZT,
+        [data-test-id="invite-friends-cta"]:active .JlN.zDA.IZT {
+            opacity: 0.8 !important;
+        }
+
+        /* Saved Board Title Text Color */
+        [data-test-id="saved-board-title"],
+        [data-test-id="saved-board-title"] .X8m.PON.IZT.tBJ.dyH.iFc.sAJ.H2s {
+            color: var(--theme-text) !important;
+        }
+
+        /* Override any inline styles */
+        [data-test-id="saved-board-title"][style*="color"],
+        [data-test-id="saved-board-title"] [style*="color"] {
+            color: var(--theme-text) !important;
+        }
+
+        /* Chat Window Container Styling */
+        [data-test-id="chat-window-container"] {
+            background-color: var(--theme-secondary) !important;
+            box-shadow: none !important;
+        }
+
+        /* Header Section */
+        [data-test-id="chat-window-container"] .Jea.KS5._co.hjq {
+            background-color: var(--theme-secondary) !important; /* Match container background */
+            border-bottom: 1px solid var(--theme-border) !important;
+        }
+
+        /* Messages Title */
+        [data-test-id="chat-window-container"] .X8m.zDA.IZT.tBJ.dyH.iFc.bwj.H2s {
+            color: var(--theme-text) !important;
+            font-weight: 600 !important;
+        }
+
+        /* Close Button */
+        [data-test-id="chat-window-container"] button[aria-label="Close"] {
+            background: none !important;
+            border: none !important;
+            padding: 0 !important;
+            cursor: pointer !important;
+            height: 32px !important;
+            width: 32px !important;
+            margin-right: 8px !important; /* Add space between text and button */
+        }
+
+        [data-test-id="chat-window-container"] button[aria-label="Close"] .SPw._O1.KS5.mQ8.K1k.uPZ {
+            background-color: var(--theme-obsidian) !important; /* Use darker color for buttons */
+            border: var(--theme-borderWidth) solid transparent !important;
+            border-radius: 50% !important;
+            transition: all 0.2s ease !important;
+            transform: translateZ(0) !important;
+            will-change: transform !important;
+            height: 32px !important; /* Override container size */
+            width: 32px !important; /* Override container size */
+        }
+
+        [data-test-id="chat-window-container"] button[aria-label="Close"] svg {
+            fill: var(--theme-navIconFill) !important;
+            transition: fill 0.2s ease !important;
+            width: 16px !important; /* Smaller icon size */
+            height: 16px !important; /* Smaller icon size */
+        }
+
+        [data-test-id="chat-window-container"] button[aria-label="Close"]:hover .SPw._O1.KS5.mQ8.K1k.uPZ {
+            background-color: var(--theme-hover) !important;
+            border-color: var(--theme-border) !important;
+            transform: scale(1.05) translateZ(0) !important;
+        }
+
+        [data-test-id="chat-window-container"] button[aria-label="Close"]:hover svg {
+            fill: var(--theme-navIconHover) !important;
+        }
+
+        /* Options Button */
+        [data-test-id="chat-window-container"] button[aria-label="inbox options overflow button"] {
+            background: none !important;
+            border: none !important;
+            padding: 0 !important;
+            cursor: pointer !important;
+            height: 32px !important;
+            width: 32px !important;
+            margin-right: 16px !important; /* Add space from right border */
+        }
+
+        [data-test-id="chat-window-container"] button[aria-label="inbox options overflow button"] .SPw._O1.KS5.mQ8.K1k.uPZ {
+            background-color: var(--theme-obsidian) !important; /* Use darker color for buttons */
+            border: var(--theme-borderWidth) solid transparent !important;
+            border-radius: 50% !important;
+            transition: all 0.2s ease !important;
+            transform: translateZ(0) !important;
+            will-change: transform !important;
+            height: 32px !important; /* Override container size */
+            width: 32px !important; /* Override container size */
+        }
+
+        [data-test-id="chat-window-container"] button[aria-label="inbox options overflow button"] svg {
+            fill: var(--theme-navIconFill) !important;
+            transition: fill 0.2s ease !important;
+            width: 16px !important; /* Smaller icon size */
+            height: 16px !important; /* Smaller icon size */
+        }
+
+        [data-test-id="chat-window-container"] button[aria-label="inbox options overflow button"]:hover .SPw._O1.KS5.mQ8.K1k.uPZ {
+            background-color: var(--theme-hover) !important;
+            border-color: var(--theme-border) !important;
+            transform: scale(1.05) translateZ(0) !important;
+        }
+
+        [data-test-id="chat-window-container"] button[aria-label="inbox options overflow button"]:hover svg {
+            fill: var(--theme-navIconHover) !important;
+        }
+
+        /* Compose New Message Button */
+        [data-test-id="compose-new-message-button"] .S9z.eEj.CCY.Tbt.L4E.e8F.BG7 {
+            background-color: var(--theme-secondary) !important;
+            border: var(--theme-borderWidth) solid transparent !important;
+            border-radius: 8px !important;
+            transition: all 0.2s ease !important;
+            margin: 8px !important;
+        }
+
+        [data-test-id="compose-new-message-button"] .H-G.INd.Jea.KS5.mQ8.yBD svg {
+            fill: var(--theme-navIconFill) !important;
+            transition: fill 0.2s ease !important;
+        }
+
+        [data-test-id="compose-new-message-button"] .X8m.zDA.IZT.CKL.tBJ.dyH.iFc.sAJ.H2s {
+            color: var(--theme-text) !important;
+        }
+
+        [data-test-id="compose-new-message-button"] .S9z.eEj.CCY.Tbt.L4E.e8F.BG7:hover {
+            background-color: var(--theme-hover) !important;
+            border-color: var(--theme-border) !important;
+            transform: translateY(-1px) !important;
+        }
+
+        [data-test-id="compose-new-message-button"] .S9z.eEj.CCY.Tbt.L4E.e8F.BG7:hover svg {
+            fill: var(--theme-navIconHover) !important;
+        }
+
+        /* Invite Friends Section */
+        [data-test-id="invite-friends-cta"] {
+            background-color: var(--theme-secondary) !important;
+            border: var(--theme-borderWidth) solid transparent !important;
+            border-radius: 8px !important;
+            margin: 8px !important;
+            transition: all 0.2s ease !important;
+        }
+
+        [data-test-id="invite-friends-cta"] .H-G.INd.Jea.KS5.Yo2.haa.mQ8 {
+            background-color: var(--theme-focus) !important;
+            border-radius: 12px !important;
+            transition: all 0.2s ease !important;
+        }
+
+        [data-test-id="invite-friends-cta"] svg {
+            fill: var(--theme-navIconFill) !important;
+            transition: fill 0.2s ease !important;
+        }
+
+        [data-test-id="invite-friends-cta"] .X8m.zDA.IZT,
+        [data-test-id="invite-friends-cta"] .JlN.zDA.IZT {
+            color: var(--theme-text) !important;
+        }
+
+        [data-test-id="invite-friends-cta"]:hover {
+            background-color: var(--theme-hover) !important;
+            border-color: var(--theme-border) !important;
+            transform: translateY(-1px) !important;
+        }
+
+        [data-test-id="invite-friends-cta"]:hover .H-G.INd.Jea.KS5.Yo2.haa.mQ8 {
+            background-color: var(--theme-hover) !important;
+        }
+
+        [data-test-id="invite-friends-cta"]:hover svg {
+            fill: var(--theme-navIconHover) !important;
+        }
+
+        /* Focus States */
+        [data-test-id="chat-window-container"] button:focus-visible,
+        [data-test-id="compose-new-message-button"] .S9z.eEj.CCY.Tbt.L4E.e8F.BG7:focus-visible,
+        [data-test-id="invite-friends-cta"]:focus-visible {
+            outline: none !important;
+            box-shadow: 0 0 0 2px var(--theme-border) !important;
+        }
+
+        /* Active States */
+        [data-test-id="chat-window-container"] button:active .SPw._O1.KS5.mQ8.K1k.uPZ,
+        [data-test-id="compose-new-message-button"] .S9z.eEj.CCY.Tbt.L4E.e8F.BG7:active,
+        [data-test-id="invite-friends-cta"]:active {
+            transform: scale(0.98) !important;
+            background-color: var(--theme-focus) !important;
         }
     `;
 
@@ -2216,11 +2522,13 @@
                 injectStyles();
                 applyThemeClass();
                 addGithubButton();
+                updateDimOverlay(); // <-- add call here
             }, { once: true });
         } else {
             injectStyles();
             applyThemeClass();
             addGithubButton();
+            updateDimOverlay(); // <-- add call here
         }
 
         // Observe mutations to reapply theme adjustments if needed
@@ -2228,10 +2536,79 @@
             for (const mutation of mutations) {
                 if (mutation.addedNodes.length > 0) {
                     addGithubButton();
+                    updateDimOverlay();  // <-- update overlay on DOM changes
                 }
             }
         });
         observer.observe(document.body, { childList: true, subtree: true });
+    };
+
+    // Add this new function below addGithubButton
+    const updateDimOverlay = () => {
+        const chatWindow = document.querySelector('[data-test-id="chat-window-container"]');
+        let overlay = document.getElementById("pinterest-dim-overlay");
+        if (chatWindow) {
+            // Check if the chat container is effectively hidden
+            const cs = window.getComputedStyle(chatWindow);
+            if (cs.display === "none" || cs.visibility === "hidden") {
+                if (overlay) overlay.remove();
+                return;
+            }
+            if (!overlay) {
+                overlay = document.createElement("div");
+                overlay.id = "pinterest-dim-overlay";
+                overlay.style.position = "fixed";
+                overlay.style.top = "0";
+                overlay.style.left = "0";
+                overlay.style.width = "100vw";
+                overlay.style.height = "100vh";
+                overlay.style.backgroundColor = "rgba(0, 0, 0, 0.6)"; // increased dimming
+                overlay.style.willChange = "opacity"; // hint for hardware acceleration
+                overlay.style.transform = "translate3d(0, 0, 0)"; // trigger GPU layer
+                overlay.style.zIndex = "690"; // ensure it's below the chat window container (typically z-index 700)
+                overlay.style.pointerEvents = "auto"; // enable clicks on the overlay to trigger chat close
+                document.body.appendChild(overlay);
+                // Add event listener to close the chat container when the overlay is clicked
+                overlay.addEventListener("click", function(e) {
+                    e.stopPropagation();
+                    // Immediately remove the overlay for instant visual feedback
+                    overlay.remove();
+                    // Use requestAnimationFrame to schedule a direct closure action for smoother performance
+                    requestAnimationFrame(() => {
+                        // Directly hide the chat container without triggering slow animations
+                        chatWindow.style.transition = "none";
+                        chatWindow.style.display = "none";
+                    });
+                });
+            }
+            // Attach a mutation observer to track style/class changes on the chat container
+            if (!chatWindow._dimObserver) {
+                const chatObserver = new MutationObserver(() => {
+                    const computed = window.getComputedStyle(chatWindow);
+                    if (computed.display === "none" || computed.visibility === "hidden") {
+                        if (overlay) overlay.remove();
+                        chatObserver.disconnect();
+                        chatWindow._dimObserver = null;
+                    }
+                });
+                chatObserver.observe(chatWindow, { attributes: true, attributeFilter: ["style", "class"] });
+                chatWindow._dimObserver = chatObserver;
+            }
+            // Attach an event listener to the chat container's close button for immediate overlay removal
+            const closeButton = chatWindow.querySelector('button[aria-label="Close"]');
+            if (closeButton && !closeButton._dimOverlayListenerAttached) {
+                closeButton.addEventListener("click", () => {
+                    if (overlay) {
+                        overlay.remove();
+                    }
+                });
+                closeButton._dimOverlayListenerAttached = true;
+            }
+        } else {
+            if (overlay) {
+                overlay.remove();
+            }
+        }
     };
 
     // Start the theme
