@@ -36,47 +36,136 @@
 (function () {
     "use strict";
 
-    // ===============================
-    // 1. Theme Configuration Object
-    // ===============================
-    const themeConfig = {
-        colors: {
-            bg: "#1a1a1a",
-            obsidian: "#1E2433",
-            secondary: "#2B3548",
-            text: "#FFFFFF",
-            muted: "#A8B3C7",
-            hover: "#323D54",
-            focus: "#3A4661",
-            border: "#4D5975",
-            suggestion: "#2A3447",
-            suggestionHover: "#384561",
-            suggestionActive: "#445373",
-            navBg: "#1E2433",
-            navBorder: "#2B3548",
-            navIconFill: "#A8B3C7",
-            navIconHover: "#FFFFFF",
-            navIconActive: "#FFFFFF",
-            navActiveIndicator: "#445373"
+    // Themes
+    const themes = [
+        {
+            name: "Obsidian",
+            colors: {
+                bg: "#1a1a1a",
+                obsidian: "#1E2433",
+                secondary: "#2B3548",
+                text: "#FFFFFF",
+                muted: "#A8B3C7",
+                hover: "#323D54",
+                focus: "#3A4661",
+                border: "#4D5975",
+                suggestion: "#2A3447",
+                suggestionHover: "#384561",
+                suggestionActive: "#445373",
+                navBg: "#1E2433",
+                navBorder: "#2B3548",
+                navIconFill: "#A8B3C7",
+                navIconHover: "#FFFFFF",
+                navIconActive: "#FFFFFF",
+                navActiveIndicator: "#445373"
+            },
+            sizes: {
+                borderWidth: "2px",
+                searchHeight: "48px",
+                containerHeight: "56px",
+                searchRadius: "24px",
+                iconSize: "16px",
+                containerWidth: "407px",
+                suggestionWidth: "123.365px",
+                navWidth: "80px",
+                navIconSize: "24px",
+                navButtonSize: "56px",
+                navSpacing: "16px",
+                navIndicatorSize: "32px"
+            },
+            shadows: {
+                dropdown: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
+            }
         },
-        sizes: {
-            borderWidth: "2px",
-            searchHeight: "48px",
-            containerHeight: "56px",
-            searchRadius: "24px",
-            iconSize: "16px",
-            containerWidth: "407px",
-            suggestionWidth: "123.365px",
-            navWidth: "80px",
-            navIconSize: "24px",
-            navButtonSize: "56px",
-            navSpacing: "16px",
-            navIndicatorSize: "32px"
+        {
+            name: "Graphite",
+            colors: {
+                bg: "#2E2E2E",
+                obsidian: "#2B2B2B",
+                secondary: "#3A3A3A",
+                text: "#E0E0E0",
+                muted: "#B0B0B0",
+                hover: "#424242",
+                focus: "#545454",
+                border: "#5C5C5C",
+                suggestion: "#383838",
+                suggestionHover: "#4C4C4C",
+                suggestionActive: "#606060",
+                navBg: "#2B2B2B",
+                navBorder: "#454545",
+                navIconFill: "#B0B0B0",
+                navIconHover: "#E0E0E0",
+                navIconActive: "#E0E0E0",
+                navActiveIndicator: "#606060"
+            },
+            sizes: {
+                borderWidth: "2px",
+                searchHeight: "48px",
+                containerHeight: "56px",
+                searchRadius: "24px",
+                iconSize: "16px",
+                containerWidth: "407px",
+                suggestionWidth: "123.365px",
+                navWidth: "80px",
+                navIconSize: "24px",
+                navButtonSize: "56px",
+                navSpacing: "16px",
+                navIndicatorSize: "32px"
+            },
+            shadows: {
+                dropdown: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
+            }
         },
-        shadows: {
-            dropdown: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
-        }
-    };
+        {
+            name: "Charcoal",
+            colors: {
+                bg: "#242A30",
+                obsidian: "#1F252B",
+                secondary: "#363E47",
+                text: "#E8EEF1",
+                muted: "#B1BCC6",
+                hover: "#3D4651",
+                focus: "#536872",
+                border: "#5C6770",
+                suggestion: "#2C343B",
+                suggestionHover: "#37404A",
+                suggestionActive: "#46505A",
+                navBg: "#1F252B",
+                navBorder: "#303942",
+                navIconFill: "#B1BCC6",
+                navIconHover: "#E8EEF1",
+                navIconActive: "#E8EEF1",
+                navActiveIndicator: "#46505A"
+            },
+            sizes: {
+                borderWidth: "2px",
+                searchHeight: "48px",
+                containerHeight: "56px",
+                searchRadius: "24px",
+                iconSize: "16px",
+                containerWidth: "407px",
+                suggestionWidth: "123.365px",
+                navWidth: "80px",
+                navIconSize: "24px",
+                navButtonSize: "56px",
+                navSpacing: "16px",
+                navIndicatorSize: "32px"
+            },
+            shadows: {
+                dropdown: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
+            }
+        },
+        // More themes...
+    ];
+
+    // Theme index (default 1)
+    const LS_THEME_KEY = "pinterest-theme-index";
+    let activeThemeIndex = localStorage.getItem(LS_THEME_KEY);
+    activeThemeIndex = activeThemeIndex !== null ? parseInt(activeThemeIndex, 10) : 1;
+
+    // Active theme
+    const themeConfig = themes[activeThemeIndex];
+    console.log(`Applied theme: ${themeConfig.name}`);
 
     // ====================================
     // 2. CSS Strings – Categorized by Role
@@ -84,7 +173,7 @@
 
     // 2.1 Preload & Base Styles (must load early)
     const preloadCSS = `
-        /* Hide page until theme is applied */
+        /* Hide until applied */
         html {
             visibility: hidden;
         }
@@ -92,7 +181,7 @@
             visibility: visible;
         }
 
-        /* Define CSS Variables early */
+        /* CSS vars */
         :root {
             ${(() => {
                 const { colors, sizes, shadows } = themeConfig;
@@ -102,13 +191,11 @@
             })()}
         }
 
-        /* Early Button Styling */
-        /* Save Button */
+        /* Early btns */
         [data-test-id="PinBetterSaveButton"] {
             position: relative !important;
             z-index: 2 !important;
         }
-
         [data-test-id="PinBetterSaveButton"] button {
             background: none !important;
             border: none !important;
@@ -2781,13 +2868,20 @@
         [data-test-id="chat-window-container"] .X8m.zDA.IZT.tBJ.dyH.iFc.bwj.H2s {
             margin-left: 8px !important;
         }
+
+        /* Custom Overrides */
+        [data-test-id="pointer-events-wrapper"],
+        [data-test-id="share-icon-button"],
+        [data-test-id="feedback-button"] {
+            margin-bottom: 5px !important;
+        }
     `;
 
     // ====================================
     // 3. CSS Injection Functions
     // ====================================
 
-    // Helper to create a <style> element with given CSS and optional id/marker
+    // Inject CSS elements
     const createStyleElement = (cssText, id) => {
         const styleEl = document.createElement("style");
         styleEl.textContent = cssText;
@@ -2798,20 +2892,20 @@
         return styleEl;
     };
 
-    // Inject both the preload (base) and main CSS into the document
+    // Inject both preload and main CSS
     let stylesInjected = false;
     const injectStyles = () => {
         if (stylesInjected) return;
         const preloadStyle = createStyleElement(preloadCSS, "pinterest-theme-preload");
         const mainStyle = createStyleElement(mainCSS, "pinterest-theme-main");
 
-        // Append both styles in a document fragment for efficiency
+        // Append via fragment
         const frag = document.createDocumentFragment();
         frag.appendChild(preloadStyle);
         frag.appendChild(mainStyle);
         document.documentElement.appendChild(frag);
 
-        // Also call GM_addStyle for the main CSS (as in original)
+        // Also add main CSS via GM_addStyle
         GM_addStyle(mainCSS);
 
         stylesInjected = true;
@@ -2821,7 +2915,7 @@
     // 4. Theme Activation & Mutation Observer
     // ====================================
 
-    // Add the "themed" class to <html> (if not already present) to reveal the page
+    // Reveal theme class on html
     const applyThemeClass = () => {
         if (!document.documentElement.classList.contains("themed")) {
             requestAnimationFrame(() => {
@@ -2830,7 +2924,7 @@
         }
     };
 
-    // Function to add the GitHub button
+    // Insert GitHub btn
     const addGithubButton = () => {
         const footerButton = document.querySelector('[data-test-id="footer-more-button-container"]')?.closest(".J8R");
         if (footerButton) {
@@ -2838,111 +2932,84 @@
             githubButton.className = "github-profile-button";
             githubButton.innerHTML = `
                 <a href="https://github.com/mustafachyi/Pinterest-Themer" target="_blank" rel="noopener noreferrer">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 30 30"><path d="M15 3C8.373 3 3 8.373 3 15c0 5.623 3.872 10.328 9.092 11.63a1.8 1.8 0 0 1-.092-.583v-2.051h-1.508c-.821 0-1.551-.353-1.905-1.009-.393-.729-.461-1.844-1.435-2.526-.289-.227-.069-.486.264-.451.615.174 1.125.596 1.605 1.222.478.627.703.769 1.596.769.433 0 1.081-.025 1.691-.121.328-.833.895-1.6 1.588-1.962-3.996-.411-5.903-2.399-5.903-5.098 0-1.162.495-2.286 1.336-3.233-.276-.94-.623-2.857.106-3.587 1.798 0 2.885 1.166 3.146 1.481A9 9 0 0 1 15.495 9c1.036 0 2.024.174 2.922.483C18.675 9.17 19.763 8 21.565 8c.732.731.381 2.656.102 3.594.836.945 1.328 2.066 1.328 3.226 0 2.697-1.904 4.684-5.894 5.097C18.199 20.49 19 22.1 19 23.313v2.734c0 .104-.023.179-.035.268C23.641 24.676 27 20.236 27 15c0-6.627-5.373-12-12-12"/></svg>
                 </a>
             `;
             footerButton.parentNode.replaceChild(githubButton, footerButton);
         }
     };
 
-    // Initialize theme injection and activation when DOM is ready
+    // Init theme
     const initTheme = () => {
         if (document.readyState === "loading") {
             document.addEventListener("DOMContentLoaded", () => {
                 injectStyles();
                 applyThemeClass();
                 addGithubButton();
-                updateDimOverlay(); // <-- add call here
+                integrateThemeSwitcherUI();
             }, { once: true });
         } else {
             injectStyles();
             applyThemeClass();
             addGithubButton();
-            updateDimOverlay(); // <-- add call here
+            integrateThemeSwitcherUI();
         }
 
-        // Observe mutations to reapply theme adjustments if needed
+        // Mutation observer for DOM changes
         const observer = new MutationObserver((mutations) => {
             for (const mutation of mutations) {
                 if (mutation.addedNodes.length > 0) {
                     addGithubButton();
-                    updateDimOverlay();  // <-- update overlay on DOM changes
+                    integrateThemeSwitcherUI();
                 }
             }
         });
         observer.observe(document.body, { childList: true, subtree: true });
     };
 
-    // Add this new function below addGithubButton
-    const updateDimOverlay = () => {
-        const chatWindow = document.querySelector('[data-test-id="chat-window-container"]');
-        let overlay = document.getElementById("pinterest-dim-overlay");
-        if (chatWindow) {
-            // Check if the chat container is effectively hidden
-            const cs = window.getComputedStyle(chatWindow);
-            if (cs.display === "none" || cs.visibility === "hidden") {
-                if (overlay) overlay.remove();
-                return;
-            }
-            if (!overlay) {
-                overlay = document.createElement("div");
-                overlay.id = "pinterest-dim-overlay";
-                overlay.style.position = "fixed";
-                overlay.style.top = "0";
-                overlay.style.left = "0";
-                overlay.style.width = "100vw";
-                overlay.style.height = "100vh";
-                overlay.style.backgroundColor = "rgba(0, 0, 0, 0.6)"; // increased dimming
-                overlay.style.willChange = "opacity"; // hint for hardware acceleration
-                overlay.style.transform = "translate3d(0, 0, 0)"; // trigger GPU layer
-                overlay.style.zIndex = "690"; // ensure it's below the chat window container (typically z-index 700)
-                overlay.style.pointerEvents = "auto"; // enable clicks on the overlay to trigger chat close
-                document.body.appendChild(overlay);
-                // Add event listener to close the chat container when the overlay is clicked
-                overlay.addEventListener("click", function(e) {
-                    e.stopPropagation();
-                    // Immediately remove the overlay for instant visual feedback
-                    overlay.remove();
-                    // Use requestAnimationFrame to schedule a direct closure action for smoother performance
-                    requestAnimationFrame(() => {
-                        // Directly hide the chat container without triggering slow animations
-                        chatWindow.style.transition = "none";
-                        chatWindow.style.display = "none";
-                    });
-                });
-            }
-            // Attach a mutation observer to track style/class changes on the chat container
-            if (!chatWindow._dimObserver) {
-                const chatObserver = new MutationObserver(() => {
-                    const computed = window.getComputedStyle(chatWindow);
-                    if (computed.display === "none" || computed.visibility === "hidden") {
-                        if (overlay) overlay.remove();
-                        chatObserver.disconnect();
-                        chatWindow._dimObserver = null;
-                    }
-                });
-                chatObserver.observe(chatWindow, { attributes: true, attributeFilter: ["style", "class"] });
-                chatWindow._dimObserver = chatObserver;
-            }
-            // Attach an event listener to the chat container's close button for immediate overlay removal
-            const closeButton = chatWindow.querySelector('button[aria-label="Close"]');
-            if (closeButton && !closeButton._dimOverlayListenerAttached) {
-                closeButton.addEventListener("click", () => {
-                    if (overlay) {
-                        overlay.remove();
-                    }
-                });
-                closeButton._dimOverlayListenerAttached = true;
-            }
-        } else {
-            if (overlay) {
-                overlay.remove();
-            }
+    // Theme switcher integration
+    const integrateThemeSwitcherUI = () => {
+        const headerProfileContainer = document.querySelector('[data-test-id="header-profile"]')?.closest('.xuA');
+        if (headerProfileContainer && !document.getElementById("pinterest-theme-switcher")) {
+            const switcher = document.createElement("div");
+            switcher.id = "pinterest-theme-switcher";
+            switcher.style.display = "flex";
+            switcher.style.alignItems = "center";
+            switcher.style.justifyContent = "center";
+            switcher.style.background = themeConfig.colors.secondary;
+            switcher.style.border = `1px solid ${themeConfig.colors.border}`;
+            switcher.style.fontSize = "10px";
+            switcher.style.padding = "2px 4px";
+            switcher.style.borderRadius = "4px";
+            switcher.style.color = themeConfig.colors.text;
+            switcher.style.width = "48px";
+
+            const select = document.createElement("select");
+            select.style.margin = "0";
+            select.style.background = themeConfig.colors.secondary;
+            select.style.border = "none";
+            select.style.color = themeConfig.colors.text;
+            select.style.fontSize = "10px";
+            select.style.padding = "1px";
+            select.style.width = "100%";
+
+            themes.forEach((theme, idx) => {
+                const option = document.createElement("option");
+                option.value = idx;
+                option.textContent = theme.name;
+                if (idx === activeThemeIndex) option.selected = true;
+                select.appendChild(option);
+            });
+            select.addEventListener("change", () => {
+                localStorage.setItem(LS_THEME_KEY, select.value);
+                location.reload();
+            });
+
+            switcher.appendChild(select);
+            headerProfileContainer.parentNode.insertBefore(switcher, headerProfileContainer.nextElementSibling);
         }
     };
 
-    // Start the theme
+    // Start theme
     initTheme();
 })();
